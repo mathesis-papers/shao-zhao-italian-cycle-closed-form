@@ -1,0 +1,15 @@
+{
+  "id": "shao-zhao-italian-cycle-closed-form",
+  "revision": 2,
+  "problem_ids": ["shao-zhao-italian-cycle-closed-form", "shao-zhao-2026-cycle-italian-domination-recurrence"],
+  "topic": "Explicit Italian-domination coefficients of labelled cycles at every deficit",
+  "title": "A general-deficit extension of Shao and Zhao's Italian cycle-domination formulas",
+  "creators": [
+    {"name": "Ma, Haobo", "affiliation": "ChronoAI Pte Ltd, Singapore"},
+    {"name": "Zhang, Wenlin", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
+  ],
+  "abstract": "By a gap decomposition, we extend Shao and Zhao's Theorem 7.1 (2026, arXiv:2610.00108v1, pp. 22-24) to every deficit, answering the fourth future-work direction in their Section 9, p. 29: a finite binomial sum counts Italian dominating functions of weight 2n-j on a labelled cycle for every n >= 3 and 0 <= j <= 2n. Marking a vertex counts periodic words without passing to rotation classes. The same decomposition gives a rational bivariate generating function, the total-count recurrence requested in the second direction, and a sufficient polynomial stable range. The exclusion polynomial has degree j-4 and leading coefficient 2/(j-5)! for j >= 5; paths have the same total-count growth ratio as cycles.",
+  "summary": "All-deficit cycle coefficients, exclusion polynomial degree and leading term, path/cycle growth, low-deficit Italian-Roman differences and a star polynomial, with written proofs and exact finite comparisons.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/CycleDeficit.lean"
+}

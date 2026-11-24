@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "A general-deficit extension of Shao and Zhao's Italian cycle-domination formulas"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-23"
+version: "2"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/shao-zhao-italian-cycle-closed-form?version=2"
+license: "CC-BY-4.0"

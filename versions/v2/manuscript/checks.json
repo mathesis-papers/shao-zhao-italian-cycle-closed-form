@@ -1,0 +1,114 @@
+{
+  "arithmetic": "exact integers and rational numbers",
+  "formula_vs_transfer": {
+    "cycle_lengths": [
+      3,
+      40
+    ],
+    "coefficients": 1672
+  },
+  "formula_vs_direct_enumeration": {
+    "cycle_lengths": [
+      3,
+      10
+    ],
+    "candidate_functions": 88560
+  },
+  "weighted_recurrence": {
+    "base_lengths": [
+      3,
+      35
+    ],
+    "all_coefficients": true
+  },
+  "fixed_deficit_differences": {
+    "deficits": [
+      1,
+      20
+    ],
+    "cases": 20,
+    "cycle_length_rule": "max(3,j+1) through max(3,j+1)+j+2",
+    "order_j_difference": 1
+  },
+  "total_counts_n3_to_n7": [
+    23,
+    60,
+    167,
+    467,
+    1297
+  ],
+  "dominant_root_bracket": {
+    "lower": "2.784",
+    "upper": "2.785",
+    "exact_polynomial_signs": [
+      -1,
+      1
+    ]
+  },
+  "exclusion_polynomial_differences": {
+    "deficits": [
+      5,
+      20
+    ],
+    "cases": 16,
+    "degree": "j-4",
+    "leading_coefficient": "2/(j-5)!",
+    "cycle_length_rule": "j+1 through 2*j-1"
+  },
+  "path_transfer_vs_enumeration": {
+    "path_lengths": [
+      1,
+      9
+    ]
+  },
+  "path_totals_n1_to_n10": [
+    2,
+    6,
+    17,
+    46,
+    129,
+    359,
+    999,
+    2782,
+    7746,
+    21567
+  ],
+  "roman_differences": {
+    "cycle_lengths": [
+      3,
+      10
+    ],
+    "deficits": [
+      0,
+      5
+    ],
+    "values": [
+      "0",
+      "0",
+      "0",
+      "0",
+      "n",
+      "n*(n-3)"
+    ]
+  },
+  "star_polynomial_vs_enumeration": {
+    "leaf_counts": [
+      2,
+      8
+    ]
+  },
+  "path_and_cycle_transfer_matrix": {
+    "matrix_size": 9,
+    "fourth_power_strictly_positive": true,
+    "characteristic_polynomial": "u^4*(u^5-2*u^4-2*u^3-u^2+u+1)",
+    "trace_n3_to_n7": [
+      23,
+      60,
+      167,
+      467,
+      1297
+    ]
+  },
+  "coefficient_table_sha256": "f09a07ddc008de4ebbe3f8963973bb8ace35b0d8b9493cc8ef579fe8728a1396",
+  "status": "all finite identities agree"
+}

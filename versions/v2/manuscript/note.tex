@@ -1,0 +1,439 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\di}{d_I}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\coef}[1]{[z^{#1}]}
+\title{A general-deficit extension of Shao and Zhao's\\Italian cycle-domination formulas}
+\author{Haobo Ma\thanks{ChronoAI Pte Ltd, Singapore.}\and
+Wenlin Zhang\thanks{National University of Singapore; ChronoAI Pte Ltd, Singapore.}}
+\date{17 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+By a gap decomposition, we extend Shao and Zhao's Theorem~7.1 (2026, arXiv:\allowbreak2610.00108v1,
+pp.~22--24) to every deficit, answering the fourth future-work direction
+in their Section~9, p.~29: a finite binomial sum counts the Italian
+dominating functions of weight $2n-j$ on a labelled cycle for every
+$n\geq3$ and $0\leq j\leq2n$.
+The proof cuts the deficit word at its zeros and separates isolated twos
+from the exceptional gap $22$; marking a vertex handles periodic words
+without passing to rotation classes.
+The same decomposition gives a rational bivariate generating function,
+the total-count recurrence asked for in the second direction, and an
+explicit stable range for the polynomiality of each fixed-deficit coefficient.
+We also determine the degree and leading coefficient of the exclusion
+polynomial and prove that paths have the same total-count growth ratio.
+\end{abstract}
+
+\section{The coefficient formula}
+Let $C_n$ have labelled vertices $\Z/n\Z$, where $n\geq3$.
+An Italian dominating function is a map $f:\Z/n\Z\to\{0,1,2\}$ such that
+$f(i)=0$ implies $f(i-1)+f(i+1)\geq2$. Its weight is $\sum_i f(i)$;
+$\di(C_n,k)$ counts the functions of weight $k$, and is zero outside
+$0\leq k\leq2n$. No identification under rotation or reflection is made.
+Put $y_i=2-f(i)$ and call $j=\sum_i y_i$ the deficit. Then
+\begin{equation}\label{eq:local}
+ y_i=2\ \Longrightarrow\ y_{i-1}+y_{i+1}\leq2.
+\end{equation}
+This is Shao and Zhao's Corollary~3.2, p.~7~\cite{SZ}.
+Their boundary-conditioned dynamic program computes all cycle coefficients;
+Theorem~7.1 gives explicit formulas for $j\leq5$, while Section~9 asks for
+general $j$. Here the answer is a positive finite sum rather than a
+case-by-case subtraction of forbidden configurations. Local restrictions
+on compositions also have a general transfer-matrix treatment~\cite{BC};
+the particular gap classification below makes every coefficient explicit.
+
+For integers $u,v$, set $\binom uv=0$ unless $0\leq v\leq u$, and use the
+ordinary binomial coefficient otherwise. Define $r=j-n$, $s=2n-j$, and
+\[
+ Z_{n,j}=\begin{cases}\displaystyle\frac ns\binom sr,
+ &r\geq0,\ 2r\leq n,\ s>0,\\0,&\text{otherwise},\end{cases}
+ \qquad
+ E_{n,j}=\begin{cases}3,&3\mid n\text{ and }3j=4n,\\0,&\text{otherwise}.
+ \end{cases}
+\]
+For nonnegative integers $a,b$, write
+\[
+ c=j-2a-4b,\qquad t=n-j+a+b,\qquad m=t+b,
+\]
+and define
+\begin{equation}\label{eq:term}
+ G_{n,j}(a,b)=
+ \begin{cases}
+ \displaystyle\frac nm\binom mb\binom{c+t-1}{c}\binom{c+t}{a},
+ &c\geq0\text{ and }t\geq1,\\[3pt]
+ 0,&\text{otherwise}.
+ \end{cases}
+\end{equation}
+The positive branch has $m\geq1$, so its denominator is nonzero.
+
+\begin{theorem}\label{thm:main}
+For $n\geq3$ and $0\leq j\leq2n$,
+\begin{equation}\label{eq:main}
+ \di(C_n,2n-j)=Z_{n,j}+E_{n,j}
+       +\sum_{b=0}^{j}\sum_{a=0}^{j}G_{n,j}(a,b).
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+We count words $y$ satisfying~\eqref{eq:local} and having sum $j$.
+First suppose $y$ contains no zero. Its letters are $1$ and $2$;
+two adjacent twos would violate~\eqref{eq:local}. There are $r=j-n$
+twos and $s=2n-j$ ones. Thus $r\geq0$, $r\leq s$, and $s>0$.
+Mark one of the ones and read clockwise from it. Among the $s$ slots
+immediately following the ones, choose $r$ slots in which to place a two.
+There are $\binom sr$ rooted arrangements and $n$ choices for the
+label of the marked one. Each unmarked labelled word has exactly $s$
+marks, giving $Z_{n,j}$. This argument counts actual marked vertices,
+including those in periodic words.
+
+Now suppose there are $m\geq1$ zeros. The $m$ successive gaps between
+zeros are linear words on $\{1,2\}$, with the empty word allowed.
+If a gap contains adjacent twos, the two outer neighbors of this pair
+must both be zero by~\eqref{eq:local}. Consequently that entire gap
+is exactly $22$. Call it exceptional. Every other gap has no adjacent
+twos and will be called ordinary. Conversely, all these gaps satisfy
+the local rule, including at the zero boundaries.
+
+Let $b$ be the number of exceptional gaps, $t=m-b$ the number of ordinary
+gaps, $c$ the total number of ones, and $a$ the number of isolated twos
+in ordinary gaps. Counting length and deficit gives
+\begin{equation}\label{eq:inventory}
+ n=m+c+a+2b,\qquad j=c+2a+4b.
+\end{equation}
+If $t=0$, the whole word repeats $022$: necessarily $3\mid n$ and
+$3j=4n$, and the three choices for the residue class of the zeros are
+the only possibilities. This is $E_{n,j}$.
+
+Suppose $t\geq1$. Mark a zero and list the $m$ gaps clockwise from it.
+Choose the $b$ exceptional gaps in $\binom mb$ ways. Distribute the
+$c$ ones among the $t$ ordinary gaps by a weak composition, in
+$\binom{c+t-1}{c}$ ways. If a particular ordinary gap contains $c_i$
+ones, its isolated twos may occupy any subset of its $c_i+1$ slots
+(before, between, or after those ones). Across the ordinary gaps there
+are $c+t$ slots. Choosing $a$ of these gives $\binom{c+t}{a}$ choices.
+The construction is bijective, because deleting the isolated twos
+recovers the distributed ones and the chosen slots.
+
+There are $n$ choices for the label of the marked zero, while each
+unmarked word has exactly $m$ possible marks. Hence its contribution is
+the positive branch of~\eqref{eq:term}. Solving~\eqref{eq:inventory}
+gives precisely $c,t,m$ defined above. Every contributing word has
+$0\leq a,b\leq j$; impossible inventories have zero contribution.
+The three classes are disjoint and exhaustive, proving~\eqref{eq:main}.
+In particular $j=0$ gives the unique all-zero deficit word, and $j=2n$
+gives zero, since the all-two deficit word violates the local rule.
+\end{proof}
+
+\section{Generating function and consequences}
+Let
+\[
+ A_n(z)=\sum_{j=0}^{2n}\di(C_n,2n-j)z^j \quad(n\geq3),
+\]
+and let $x$ mark length. All generating functions below are formal power
+series in $x$ with coefficients in $\Q[z]$. Set
+\begin{align*}
+ D(x,z)&=1-xz-x^2z^3,\\
+ H(x,z)&=x\left(\frac{1+xz^2}{D(x,z)}+x^2z^4\right),\\
+ P(x,z)&=D(x,z)(1-H(x,z))\\
+ &=1-(1+z)x-(z^2+z^3)x^2-z^4x^3+z^5x^4+z^7x^5.
+\end{align*}
+The factor $x$ in $H$ counts a zero and the following gap.
+
+\begin{corollary}\label{cor:gen}
+For every $n\geq3$,
+\begin{equation}\label{eq:log}
+ A_n(z)=[x^n]\left(-x\frac{\partial}{\partial x}\log P(x,z)\right).
+\end{equation}
+Consequently, for $n\geq3$,
+\begin{align}\label{eq:weighted}
+ A_{n+5}(z)={}&(1+z)A_{n+4}(z)+(z^2+z^3)A_{n+3}(z)\notag\\
+ &+z^4A_{n+2}(z)-z^5A_{n+1}(z)-z^7A_n(z).
+\end{align}
+Writing $a_n=A_n(1)$ gives
+\[
+ a_{n+5}=2a_{n+4}+2a_{n+3}+a_{n+2}-a_{n+1}-a_n,
+ \qquad (a_3,a_4,a_5,a_6,a_7)=(23,60,167,467,1297).
+\]
+\end{corollary}
+\begin{proof}
+An ordinary gap with $c$ ones has $c+1$ slots for isolated twos, so its
+generating function is
+\[
+ \sum_{c\geq0}(xz)^c(1+xz^2)^{c+1}
+       =\frac{1+xz^2}{1-xz-x^2z^3}.
+\]
+The exceptional gap contributes $x^2z^4$. Thus the same zero-marking
+argument as in Theorem~\ref{thm:main} gives the zero-containing contribution
+\[
+ x\partial_x\sum_{m\geq1}\frac{H(x,z)^m}{m}
+       =-x\partial_x\log(1-H(x,z)).
+\]
+Indeed differentiation supplies the factor $n$, and division by $m$
+removes the zero mark without using any orbit-size assumption.
+For a zero-free word mark a one instead. A one and its optional following
+two have generating function $B=xz(1+xz^2)$, so the identical argument
+gives $-x\partial_x\log(1-B)=-x\partial_x\log D$.
+Every zero-free admissible cycle of length at least three contains a one.
+Adding the two contributions proves~\eqref{eq:log}. The formal expression
+also has coefficients at lengths one and two, but we give those no
+simple-cycle interpretation.
+
+Multiplying $-xP_x/P$ by $P$ shows its coefficients satisfy the displayed
+order-five recurrence at degrees greater than five. Taking degree $n+5$
+with $n\geq3$ uses only simple-cycle coefficients. Setting $z=1$ gives
+the total-count recurrence. The initial totals follow by substituting
+$n=3,4,5,6,7$ in~\eqref{eq:main} and summing over $j$.
+\end{proof}
+
+\begin{corollary}\label{cor:poly}
+For each fixed $j\geq0$, $\di(C_n,2n-j)$ agrees, for
+$n\geq\max(3,j+1)$, with a polynomial in $n$ of degree $j$ and leading
+coefficient $1/j!$.
+\end{corollary}
+\begin{proof}
+When $n>j$, neither $Z_{n,j}$ nor $E_{n,j}$ contributes, and $t\geq1$
+for every summand with $c\geq0$. The finite set of pairs $a,b$ is
+independent of $n$. If $b\geq1$, the factor
+$\binom mb/m=\binom{m-1}{b-1}/b$ is polynomial in $n$.
+If $b=0$ and $c\geq1$, $\binom{c+m-1}{c}$ contains a factor $m$.
+If $b=c=0$ and $a\geq1$, $\binom ma$ contains a factor $m$ instead.
+Thus every summand is polynomial of degree at most
+$c+a+b=j-a-3b$. The pair $a=b=0$ contributes $\binom nj$:
+for $j>0$ this follows from
+$n\binom{n-1}{j}/(n-j)=\binom nj$, and for $j=0$ it is $1$.
+All other pairs have smaller degree. This proves the assertion and
+supplies a concrete sufficient stable range for Lemma~3.4 of~\cite{SZ}.
+\end{proof}
+
+\begin{corollary}\label{cor:excluded}
+Let $T(n,j)=[z^j](1+z+z^2)^n$ and
+$F_j(n)=T(n,j)-\di(C_n,2n-j)$.
+For $j\leq4$, $F_j(n)=0$ whenever $n\geq3$ and $j\leq2n$.
+For every $j\geq5$ and $n\geq j+1$, $F_j(n)$ is a polynomial in $n$
+of degree exactly $j-4$, with leading coefficient $2/(j-5)!$.
+\end{corollary}
+\begin{proof}
+A forbidden triple is $122$, $221$, or $222$, so none has deficit below
+five. For fixed $j$ and $n>j$, every word of deficit $j$ has a zero.
+Decompose an excluded word into its $h\geq1$ nonempty positive runs,
+separated by nonempty zero gaps. At least one run contains a forbidden
+triple and has weight at least five; all other runs have weight at least
+one. Consequently $h\leq j-4$.
+
+Fix an ordered list of these runs, of total length $\ell$ and weight $j$.
+There are finitely many such lists, independently of $n$.
+Mark the start of one run. Assign its vertex label and distribute
+the $n-\ell$ zeros among the $h$ nonempty gaps. Summing
+\[
+ \frac nh\binom{n-\ell-1}{h-1}
+\]
+over the ordered run lists counts the unmarked labelled words, since
+each word has exactly $h$ marks. Each summand is a polynomial of
+degree $h$ for $n>j$, including its zero values when there are too few
+zeros for the gaps. Thus $\deg F_j\leq j-4$.
+Equality $h=j-4$ requires one weight-five bad run, necessarily $122$ or
+$221$, and $j-5$ singleton runs $1$. There are $2h$ such ordered lists,
+all with $\ell=j-2$. Their combined contribution is
+$2n\binom{n-j+1}{j-5}$; all other lists give smaller degree.
+This proves the stated degree and leading coefficient, strengthening
+the degree bound in Lemma~3.4 of~\cite{SZ} with a sufficient stable range.
+\end{proof}
+
+The low deficits recover Theorem~7.1 of~\cite{SZ} without an expansion:
+put $T(n,j)=\coef{j}(1+z+z^2)^n$. The smallest forbidden triples in
+\eqref{eq:local} are $122,221,222$, with deficits $5,5,6$.
+Therefore $\di(C_n,2n-j)=T(n,j)$ for $0\leq j\leq4$.
+For $j=5$ and $n\geq4$, the invalid words have two adjacent twos and
+one adjacent one; the $n$ choices of the pair and its two ends give
+$\di(C_n,2n-5)=T(n,5)-2n$. For $n=3$ that coefficient is zero instead.
+These are recoveries of the cited formulas, not additional cases of a
+new low-deficit theorem.
+For $j\leq3$, the corresponding Roman formulas were proved earlier by
+Deepak, Alwardi and Indiramma (2021), Theorem~2.4(ix)--(xii), p.~91~\cite{DAI};
+Corollary~\ref{cor:roman} explains why they also count Italian functions.
+
+\begin{corollary}\label{cor:growth}
+The total cycle count satisfies $a_n\sim\lambda^n$ and
+$a_{n+1}/a_n\to\lambda$, where $2.784<\lambda<2.785$ is the unique
+root of largest modulus of
+\[
+ q(u)=u^5-2u^4-2u^3-u^2+u+1.
+\]
+\end{corollary}
+\begin{proof}
+At $z=1$, the positive-coefficient series
+$H(x,1)=x(1+x)/(1-x-x^2)+x^3$ increases from zero to infinity as
+$x$ increases from zero to $\alpha=(\sqrt5-1)/2$.
+There is a unique $\rho\in(0,\alpha)$ with $H(\rho,1)=1$.
+For $|x|<\rho$, $|H(x,1)|\leq H(|x|,1)<1$, and $D(x,1)\ne0$.
+Thus $P(x,1)$ has no zero in that disk. On $|x|=\rho$, equality
+in the triangle inequality and the nonzero coefficients of $x$ and
+$x^2$ force any zero of $1-H(x,1)$ to be $x=\rho$.
+This zero is simple, since $H_x(\rho,1)>0$ and $D(\rho,1)>0$.
+Writing $P(x,1)=\prod_{i=1}^5(1-\lambda_i x)$, with roots repeated
+according to multiplicity, equation~\eqref{eq:log} gives
+$a_n=\sum_i\lambda_i^n$ for $n\geq3$.
+Exactly one $\lambda_i=1/\rho$ has largest modulus, proving both limits.
+It is the unique positive root greater than $1/\alpha$; the exact signs
+$q(2.784)<0<q(2.785)$ locate it as stated. This establishes the
+cycle-growth observation in Section~8.5(8) of~\cite{SZ}.
+\end{proof}
+
+\begin{corollary}\label{cor:path}
+For $p_n=\sum_k\di(P_n,k)$ there is a constant $C>0$ such that
+$p_n\sim C\lambda^n$. In particular $p_{n+1}/p_n\to\lambda$, with the
+same $\lambda$ as in Corollary~\ref{cor:growth}.
+\end{corollary}
+\begin{proof}
+Index a matrix $M$ by the nine pairs $(a,b)\in\{0,1,2\}^2$.
+Its entry from $(a,b)$ to $(b,c)$ is one when $b\ne0$ or $a+c\geq2$;
+all other entries are zero. Closed walks give
+$a_n=\operatorname{tr}(M^n)$ for $n\geq3$: the consecutive pairs of
+a closed walk recover exactly the original labelled function.
+For any two states there is a four-step walk through $(2,2)$, namely
+\[
+ (a,b),\ (b,2),\ (2,2),\ (2,c),\ (c,d).
+\]
+Every displayed transition is allowed, so $M^4$ is strictly positive.
+The finite Perron--Frobenius theorem therefore gives a simple dominant
+eigenvalue $\mu>0$ with positive left and right eigenvectors, and
+$\operatorname{tr}(M^n)\sim\mu^n$. Corollary~\ref{cor:growth} identifies
+$\mu=\lambda$.
+For $n\geq2$, $p_n=u^{\mathsf T}M^{n-2}v$, where
+$u_{(a,b)}=1$ iff $a\ne0$ or $b=2$, and
+$v_{(a,b)}=1$ iff $b\ne0$ or $a=2$.
+These are precisely the two endpoint constraints. Both vectors are
+nonnegative and nonzero, so their pairings with the positive Perron
+eigenvectors are positive. The same theorem gives the claimed
+asymptotic and ratio. This proves the path part of Section~8.5(8)--(9)
+of~\cite{SZ}, not just the cycle part.
+\end{proof}
+
+The next identities also follow in their common ranges by subtracting
+the formulas in Theorem~2.4(ix)--(xiv) of~\cite{DAI} from Theorem~7.1
+of~\cite{SZ}. The local proof includes the small-cycle boundaries.
+\begin{corollary}\label{cor:roman}
+Let $r(C_n,k)$ count Roman dominating functions: each zero must have
+a neighbor labelled two. For $n\geq3$ the difference
+$\di(C_n,2n-j)-r(C_n,2n-j)$ is zero for $0\leq j\leq3$, is $n$ for
+$j=4$, and is $n(n-3)$ for $j=5$.
+\end{corollary}
+\begin{proof}
+An Italian function fails the Roman condition exactly when some zero
+has both neighbors one. In deficit variables this is $121$, of weight
+four. At deficit four its center has $n$ choices and the remaining
+vertices are zero. At deficit five there is one further deficit-one
+vertex, in any of the $n-3$ positions outside that triple. In either case
+the center is the unique deficit-two vertex, so there is no multiple
+counting. These words satisfy the Italian condition. The argument
+also covers $n=3$, when no further position is available. This makes
+the comparison of Remark~7.4 of~\cite{SZ} quantitative.
+\end{proof}
+
+\begin{corollary}\label{cor:star}
+For a star with $m\geq2$ leaves, its weight polynomial is
+\[
+ D_I(K_{1,m},u)=u^2(1+u+u^2)^m+(1+u)(u+u^2)^m.
+\]
+Consequently $\di(K_{1,m},2)=1$ for $m\geq3$, whereas the values
+for $m=1,2$ are respectively $3,2$.
+\end{corollary}
+\begin{proof}
+A center labelled two permits arbitrary leaf labels, giving the first
+term. A center labelled one forces all leaves positive, giving
+$u(u+u^2)^m$. A zero center also forces positive leaves; for $m\geq2$
+their sum is automatically at least two, giving $(u+u^2)^m$.
+Reading the coefficient of $u^2$ proves the assertion for $m\geq2$.
+For $m=1$ the weight-two functions are $(0,2),(1,1),(2,0)$.
+This proves the observation in Section~8.5(10) of~\cite{SZ}.
+\end{proof}
+
+\section{Coverage and verification scope}
+The first six rows address Shao and Zhao's future-work bullets in
+Section~9, p.~29~\cite{SZ}. An answered request is distinguished from
+a previously stated theorem or a numerical observation.
+\begin{center}\small
+\begin{tabular}{@{}p{.46\linewidth}p{.46\linewidth}@{}}
+\toprule
+Source item & Coverage \\
+\midrule
+Broader graph classes (bullet 1) & Not covered.\\
+Total cycle-count recurrence (bullet 2) & Answered: yes;
+Corollary~\ref{cor:gen}.\\
+Unimodality (bullet 3; also \S8.5(5)) & Not covered.\\
+General-deficit cycle formulas (bullet 4) & Answered: yes;
+Theorem~\ref{thm:main}, by a positive gap sum.\\
+$q$-analogues and Roman relations (bullet 5) & Roman low-deficit
+comparison: Corollary~\ref{cor:roman}; $q$-analogues not covered.\\
+Graphs sharing the same polynomial (bullet 6) & Not covered.\\
+\midrule
+Theorem~7.1; \S8.5(6), low deficits & Reproved; prior proof:
+Shao and Zhao (2026); the paragraph after Corollary~\ref{cor:excluded}.\\
+Lemma~3.4, eventual polynomiality and exclusion degree & Reproved;
+prior proof: Shao and Zhao (2026). Explicit range and exact exclusion
+degree/leading term: Corollaries~\ref{cor:poly}--\ref{cor:excluded}.\\
+Remark~7.4, Italian--Roman comparison & Reproved from the formulas of
+Deepak et al. (2021) and Shao--Zhao (2026): Corollary~\ref{cor:roman}.\\
+\S8.5(7)--(9), path/cycle totals and growth & Proved:
+Corollaries~\ref{cor:growth}--\ref{cor:path}; finite counts in \texttt{checks.json}.\\
+\S8.5(10), star coefficient & Proved: Corollary~\ref{cor:star}.\\
+\S8.5(1)--(4), endpoint weights and dominance & Prior results cited:
+Propositions~2.1--2.3 and Remark~7.1 of Shao and Zhao (2026).\\
+\S8.4, other specific trees & Not covered.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The Lean declaration \texttt{CycleDeficit.result} proves exactly~\eqref{eq:main} for $n\geq3$
+and $j\leq2n$, with its functions \texttt{zeroFree},
+\texttt{allExceptional}, and \texttt{gapTerm} corresponding to $Z,E,G$.
+The underlying \texttt{dI} counts labelled functions of their given weight.
+Its source is the pinned
+\href{https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/CycleDeficit.lean}{\texttt{CycleDeficit.lean}}.
+The total recurrence and its five initial values are covered separately by
+\href{https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/CycleItalianDominationRecurrence.lean}{\texttt{result} in the cycle-recurrence source}.
+The auxiliary source
+\href{https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/OrdinaryWords.lean}{\texttt{OrdinaryWords.lean}}
+contains \texttt{dI\_eq\_deficit\_card} (the weight--deficit correspondence)
+and \texttt{ordinaryFamily\_card} (ordinary gap families).
+The source
+\href{https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/RootedCycleGaps.lean}{\texttt{RootedCycleGaps.lean}}
+contains \texttt{refined\_cycle\_marking\_count}, the marked-zero counting
+identity.
+
+The generating function, weighted recurrence, stable range, exclusion leading
+term, path/cycle growth, Roman differences and star formula have the written
+proofs above; these are distinct from the two main Lean statements.
+
+The accompanying \texttt{verify.py} compares the coefficient formula with
+an independent count with fixed first two labels, and with direct enumeration of
+functions on small cycles. It also checks finite instances of the recurrence
+and polynomial differences. Exact ranges and outputs are in
+\texttt{checks.json}; these finite checks complement the all-parameter proofs.
+
+\begin{thebibliography}{9}
+\bibitem{SZ} P. Shao and C. Zhao,
+\emph{Counting Weight-$k$ Italian Dominating Sets on Trees and Cycles},
+arXiv:2610.00108v1 (2026).
+\url{https://arxiv.org/abs/2610.00108v1}.
+\bibitem{DAI} G. Deepak, A. Alwardi and M. H. Indiramma,
+Roman domination polynomial of cycles,
+\emph{International Journal of Mathematical Combinatorics}
+\textbf{3} (2021), 86--97.
+\url{https://fs.unm.edu/IJMC/IJMC-3-2021.pdf}.
+\bibitem{BC} E. A. Bender and E. R. Canfield,
+Locally restricted compositions II: General restrictions and infinite matrices,
+\emph{Electronic Journal of Combinatorics} \textbf{16}(1) (2009), R108.
+\url{https://doi.org/10.37236/197}.
+\end{thebibliography}
+\bigskip
+\noindent\small This note is licensed under Creative Commons Attribution 4.0
+International (CC BY 4.0).
+\end{document}

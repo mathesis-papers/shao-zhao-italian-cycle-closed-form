@@ -1,0 +1,340 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:shao-zhao-italian-cycle-closed-form:2:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/CycleDeficit.lean"
+      },
+      "lineage": "collected:shao-zhao-italian-cycle-closed-form:s1",
+      "macros": {
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[z^{#1}]",
+        "\\di": "d_I"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "shao-zhao-italian-cycle-closed-form",
+      "scope": "in_scope",
+      "statement": "For $n\\geq3$ and $0\\leq j\\leq2n$,\n\\begin{equation}\n \\di(C_n,2n-j)=Z_{n,j}+E_{n,j}\n       +\\sum_{b=0}^{j}\\sum_{a=0}^{j}G_{n,j}(a,b).\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A general-deficit extension of Shao and Zhao's Italian cycle-domination formulas",
+      "toolchain": null,
+      "version": 2,
+      "work": "shao-zhao-italian-cycle-closed-form"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:shao-zhao-italian-cycle-closed-form:2:s2",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/CycleDeficit.lean"
+      },
+      "lineage": "collected:shao-zhao-italian-cycle-closed-form:s2",
+      "macros": {
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[z^{#1}]",
+        "\\di": "d_I"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "shao-zhao-italian-cycle-closed-form",
+      "scope": "in_scope",
+      "statement": "For every $n\\geq3$,\n\\begin{equation}\n A_n(z)=[x^n]\\left(-x\\frac{\\partial}{\\partial x}\\log P(x,z)\\right).\n\\end{equation}\nConsequently, for $n\\geq3$,\n\\begin{align}\n A_{n+5}(z)={}&(1+z)A_{n+4}(z)+(z^2+z^3)A_{n+3}(z)\\notag\\\\\n &+z^4A_{n+2}(z)-z^5A_{n+1}(z)-z^7A_n(z).\n\\end{align}\nWriting $a_n=A_n(1)$ gives\n\\[\n a_{n+5}=2a_{n+4}+2a_{n+3}+a_{n+2}-a_{n+1}-a_n,\n \\qquad (a_3,a_4,a_5,a_6,a_7)=(23,60,167,467,1297).\n\\]",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A general-deficit extension of Shao and Zhao's Italian cycle-domination formulas",
+      "toolchain": null,
+      "version": 2,
+      "work": "shao-zhao-italian-cycle-closed-form"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:shao-zhao-italian-cycle-closed-form:2:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/CycleDeficit.lean"
+      },
+      "lineage": "collected:shao-zhao-italian-cycle-closed-form:s3",
+      "macros": {
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[z^{#1}]",
+        "\\di": "d_I"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "shao-zhao-italian-cycle-closed-form",
+      "scope": "in_scope",
+      "statement": "For each fixed $j\\geq0$, $\\di(C_n,2n-j)$ agrees, for\n$n\\geq\\max(3,j+1)$, with a polynomial in $n$ of degree $j$ and leading\ncoefficient $1/j!$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A general-deficit extension of Shao and Zhao's Italian cycle-domination formulas",
+      "toolchain": null,
+      "version": 2,
+      "work": "shao-zhao-italian-cycle-closed-form"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:shao-zhao-italian-cycle-closed-form:2:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/CycleDeficit.lean"
+      },
+      "lineage": "collected:shao-zhao-italian-cycle-closed-form:s4",
+      "macros": {
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[z^{#1}]",
+        "\\di": "d_I"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "shao-zhao-italian-cycle-closed-form",
+      "scope": "in_scope",
+      "statement": "Let $T(n,j)=[z^j](1+z+z^2)^n$ and\n$F_j(n)=T(n,j)-\\di(C_n,2n-j)$.\nFor $j\\leq4$, $F_j(n)=0$ whenever $n\\geq3$ and $j\\leq2n$.\nFor every $j\\geq5$ and $n\\geq j+1$, $F_j(n)$ is a polynomial in $n$\nof degree exactly $j-4$, with leading coefficient $2/(j-5)!$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A general-deficit extension of Shao and Zhao's Italian cycle-domination formulas",
+      "toolchain": null,
+      "version": 2,
+      "work": "shao-zhao-italian-cycle-closed-form"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:shao-zhao-italian-cycle-closed-form:2:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/CycleDeficit.lean"
+      },
+      "lineage": "collected:shao-zhao-italian-cycle-closed-form:s5",
+      "macros": {
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[z^{#1}]",
+        "\\di": "d_I"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "shao-zhao-italian-cycle-closed-form",
+      "scope": "in_scope",
+      "statement": "The total cycle count satisfies $a_n\\sim\\lambda^n$ and\n$a_{n+1}/a_n\\to\\lambda$, where $2.784<\\lambda<2.785$ is the unique\nroot of largest modulus of\n\\[\n q(u)=u^5-2u^4-2u^3-u^2+u+1.\n\\]",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A general-deficit extension of Shao and Zhao's Italian cycle-domination formulas",
+      "toolchain": null,
+      "version": 2,
+      "work": "shao-zhao-italian-cycle-closed-form"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:shao-zhao-italian-cycle-closed-form:2:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/CycleDeficit.lean"
+      },
+      "lineage": "collected:shao-zhao-italian-cycle-closed-form:s6",
+      "macros": {
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[z^{#1}]",
+        "\\di": "d_I"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "shao-zhao-italian-cycle-closed-form",
+      "scope": "in_scope",
+      "statement": "For $p_n=\\sum_k\\di(P_n,k)$ there is a constant $C>0$ such that\n$p_n\\sim C\\lambda^n$. In particular $p_{n+1}/p_n\\to\\lambda$, with the\nsame $\\lambda$ as in Corollary~\\ref{cor:growth}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A general-deficit extension of Shao and Zhao's Italian cycle-domination formulas",
+      "toolchain": null,
+      "version": 2,
+      "work": "shao-zhao-italian-cycle-closed-form"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:shao-zhao-italian-cycle-closed-form:2:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/CycleDeficit.lean"
+      },
+      "lineage": "collected:shao-zhao-italian-cycle-closed-form:s7",
+      "macros": {
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[z^{#1}]",
+        "\\di": "d_I"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "shao-zhao-italian-cycle-closed-form",
+      "scope": "in_scope",
+      "statement": "Let $r(C_n,k)$ count Roman dominating functions: each zero must have\na neighbor labelled two. For $n\\geq3$ the difference\n$\\di(C_n,2n-j)-r(C_n,2n-j)$ is zero for $0\\leq j\\leq3$, is $n$ for\n$j=4$, and is $n(n-3)$ for $j=5$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A general-deficit extension of Shao and Zhao's Italian cycle-domination formulas",
+      "toolchain": null,
+      "version": 2,
+      "work": "shao-zhao-italian-cycle-closed-form"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s8",
+      "contributor": null,
+      "identity": "collected:shao-zhao-italian-cycle-closed-form:2:s8",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/CycleDeficit.lean"
+      },
+      "lineage": "collected:shao-zhao-italian-cycle-closed-form:s8",
+      "macros": {
+        "\\Q": "\\mathbb Q",
+        "\\Z": "\\mathbb Z",
+        "\\coef": "[z^{#1}]",
+        "\\di": "d_I"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "shao-zhao-italian-cycle-closed-form",
+      "scope": "in_scope",
+      "statement": "For a star with $m\\geq2$ leaves, its weight polynomial is\n\\[\n D_I(K_{1,m},u)=u^2(1+u+u^2)^m+(1+u)(u+u^2)^m.\n\\]\nConsequently $\\di(K_{1,m},2)=1$ for $m\\geq3$, whereas the values\nfor $m=1,2$ are respectively $3,2$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "A general-deficit extension of Shao and Zhao's Italian cycle-domination formulas",
+      "toolchain": null,
+      "version": 2,
+      "work": "shao-zhao-italian-cycle-closed-form"
+    }
+  ]
+}
