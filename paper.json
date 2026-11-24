@@ -28,9 +28,9 @@
         "name": "Wenlin Zhang"
       }
     ],
-    "concept_doi": null,
+    "concept_doi": "10.5281/zenodo.24485551",
     "current_version": 2,
-    "doi": null,
+    "doi": "10.5281/zenodo.24485552",
     "lean_source": {
       "revision": "7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb",
       "url": "https://github.com/the-omega-institute/trureturing/blob/7d127fe3daacaa59991ac9a3ed5e2931a1eeadeb/D5/S3/Combinatorics/Graph/ItalianDomination/CycleDeficit.lean"
